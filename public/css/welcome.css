@@ -40,6 +40,12 @@ body {
     width: 140px;
 }
 
+@media (max-width: 768px) {
+    #one {
+        display: none;
+    }
+}
+
 /* Link Underline on hover  */
 .nav a {
     position: relative;
@@ -177,6 +183,11 @@ body {
     text-align: center;
     padding-bottom: 30px;
 }
+.card:hover {
+    background-color: #222;
+    color: #fff;
+    transition: 350ms;
+}
 
 .card img {
     width: 100%;
@@ -191,21 +202,6 @@ body {
 .card p {
     font-size: 1rem;
     margin-bottom: 1rem;
-    color: #0066cc;
-}
-
-.card button {
-    background: #0066cc;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-.card button:hover {
-    background: #004d99;
 }
 
 /* From Uiverse.io by JaydipPrajapati1910 */ 
@@ -319,6 +315,55 @@ body {
     bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
   }  
 
+/* Styling for the Login / Sign In section */
+.login-section {
+    background-color: #f4f4f4; /* Light background color */
+    padding: 20px 0; /* Add some padding */
+    text-align: center; /* Center the content */
+    margin-top: 20px; /* Add some space from the content above */
+}
+
+.login-section h2 {
+    font-family: "Nunito", sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* From Uiverse.io by alexmaracinaru */ 
+.login-section button {
+    cursor: pointer;
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+    transition: all 0.2s;
+    padding: 10px 20px;
+    border-radius: 100px;
+    background: #363535;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: #fff;
+  }
+  
+  .login-section button:hover {
+    background: #5a5959;
+  }
+  
+  .login-section button > svg {
+    width: 34px;
+    margin-left: 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .login-section button:hover svg {
+    transform: translateX(5px);
+  }
+  
+  .login-section button:active {
+    transform: scale(0.95);
+  }
+  
 /* Footer */
 .footer {
     text-align: center;
