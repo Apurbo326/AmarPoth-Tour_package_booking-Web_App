@@ -1,0 +1,333 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Header */
+.header {
+    background: #ffffff;
+    color: white;
+    padding: 1rem 0;
+}
+
+.container {
+    width: 95%;
+    max-width: 1350px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.logo img {
+    width: 100px;
+}
+
+#one {
+    width: 140px;
+}
+
+/* Link Underline on hover  */
+.nav a {
+    position: relative;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    text-shadow: #333 3px 3px 5px;
+    text-decoration: none;
+    margin: 0 10px;
+}.nav a::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 48, 110);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}.nav a:hover::before {
+    transform: scaleX(1);
+}
+
+.bio {
+    margin: 100px;
+    margin-top: 0;
+    margin-bottom: 50px;
+    text-align: justify;
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://www.mhainde.org/wp-content/uploads/iStock-1285301614-1080x675.jpg') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    opacity: 0.9;
+    margin: 100px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    text-shadow: white 2px 2px 2px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    text-shadow: white 2px 2px 2px;
+}
+
+/* explore button */ 
+.button {
+  line-height: 1;
+  text-decoration: none;
+  display: inline-flex;
+  border: none;
+  cursor: pointer;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--clr);
+  color: #fff;
+  border-radius: 10rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  padding-left: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background-color 0.3s;
+}
+
+.button__icon-wrapper {
+  flex-shrink: 0;
+  width: 25px;
+  height: 25px;
+  position: relative;
+  color: var(--clr);
+  background-color: #fff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.button:hover {
+  background-color: #000;
+}
+
+.button:hover .button__icon-wrapper {
+  color: #000;
+}
+
+.button__icon-svg--copy {
+  position: absolute;
+  transform: translate(-150%, 150%);
+}
+
+.button:hover .button__icon-svg:first-child {
+  transition: transform 0.3s ease-in-out;
+  transform: translate(150%, -150%);
+}
+
+.button:hover .button__icon-svg--copy {
+  transition: transform 0.3s ease-in-out 0.1s;
+  transform: translate(0);
+}
+
+
+/* Packages Section */
+.packages {
+    padding: 2rem 0;
+    text-align: center;
+    background: #fffcfc;
+}
+
+.package-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    max-width: 300px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card h3 {
+    margin: 1rem 0 0.5rem;
+    font-size: 1.2rem;
+}
+
+.card p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #0066cc;
+}
+
+.card button {
+    background: #0066cc;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.card button:hover {
+    background: #004d99;
+}
+
+/* From Uiverse.io by JaydipPrajapati1910 */ 
+.card .button {
+    --width: 100px;
+    --height: 35px;
+    --tooltip-height: 35px;
+    --tooltip-width: 90px;
+    --gap-between-tooltip-to-button: 18px;
+    --button-color: #222;
+    --tooltip-color: #fff;
+    width: var(--width);
+    height: var(--height);
+    background: var(--button-color);
+    position: relative;
+    text-align: center;
+    border-radius: 0.45em;
+    font-family: "Arial";
+    transition: background 0.3s;
+  }
+  
+.card .button::before {
+    position: absolute;
+    content: attr(data-tooltip);
+    width: var(--tooltip-width);
+    height: var(--tooltip-height);
+    background-color: #555;
+    font-size: 0.9rem;
+    color: #fff;
+    border-radius: .25em;
+    line-height: var(--tooltip-height);
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+    left: calc(50% - var(--tooltip-width) / 2);
+  }
+  
+  .card .button::after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-color: #555;
+    left: calc(50% - 10px);
+    bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+  }
+  
+  .card .button::after,.button::before {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+  }
+  
+  .card .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card .button-wrapper,.text,.icon {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    color: #fff;
+  }
+  
+  .card .text {
+    top: 0
+  }
+  
+  .card .text,.icon {
+    transition: top 0.5s;
+  }
+  
+  .card .icon {
+    color: #fff;
+    top: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card .icon svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .card .button:hover {
+    background: #222;
+  }
+  
+  .card .button:hover .text {
+    top: -100%;
+  }
+  
+  .card .button:hover .icon {
+    top: 0;
+  }
+  
+  .card .button:hover:before,.button:hover:after {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .card .button:hover:after {
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+  }
+  
+  .card .button:hover:before {
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+  }  
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 1rem;
+    background: #333;
+    color: white;
+    text-shadow: #000 5px 5px 5px;
+    opacity: 0.275;
+}
+
+
+  
