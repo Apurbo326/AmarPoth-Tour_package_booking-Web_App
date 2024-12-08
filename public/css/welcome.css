@@ -76,6 +76,10 @@ body {
     text-align: justify;
 }
 
+.bio li {
+    margin-left: 50px;
+}
+
 /* Hero Section */
 .hero {
     background: url('https://www.mhainde.org/wp-content/uploads/iStock-1285301614-1080x675.jpg') no-repeat center center/cover;
@@ -89,7 +93,28 @@ body {
     margin: 100px;
     margin-top: 0;
     margin-bottom: 0;
+    animation: rotateImages 24s infinite; /* Animation for rotating background */
 }
+
+/* Define keyframes for image rotation */
+@keyframes rotateImages {
+    0% {
+        background-image: url('https://www.mhainde.org/wp-content/uploads/iStock-1285301614-1080x675.jpg');
+    }
+    25% {
+        background-image: url('https://images.pexels.com/photos/3278215/pexels-photo-3278215.jpeg?cs=srgb&dl=pexels-freestockpro-3278215.jpg&fm=jpg'); 
+    }
+    50% {
+        background-image: url('https://images.pexels.com/photos/307008/pexels-photo-307008.jpeg?cs=srgb&dl=pexels-riciardus-307008.jpg&fm=jpg'); 
+    }
+    75% {
+        background-image: url('https://youmatter.world/app/uploads/2019/11/travel-world.jpg');
+    }
+    100% {
+        background-image: url('https://www.mhainde.org/wp-content/uploads/iStock-1285301614-1080x675.jpg');
+    }
+}
+
 
 .hero-content h2 {
     font-size: 2.5rem;

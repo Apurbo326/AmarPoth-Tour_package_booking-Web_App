@@ -51,6 +51,20 @@
             font-style: normal;
         }
 
+        li {
+            font-family: "Nunito", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        b {
+            font-family: "Nunito", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 800;
+            font-style: normal;
+        }
+
         .text {
             font-family: "Nunito", sans-serif;
             font-optical-sizing: auto;
@@ -70,10 +84,10 @@
                 </a>
             </h1>
             <nav class="nav">
-                <a href="#">Home</a>
+                <a href="/">Home</a>
                 <a href="#">Packages</a>
                 <a href="#">Contact</a>
-                <a href="#">Login / Signup</a>
+                <a href="/signup">Login / Signup</a>
             </nav>
         </div>
     </header>
@@ -82,19 +96,22 @@
         <h1>AmarPoth: Your Ultimate Travel Partner</h1>
         <span style="margin: 10px;"> </span>
         <p>
-            At AmarPoth, we believe that every journey tells a story and every destination holds a dream. We are a dedicated travel booking platform committed to turning your travel aspirations into reality.
+            At <b>AmarPoth</b>, we believe that every journey tells a story and every destination holds a dream. We are a dedicated travel booking platform committed to turning your travel aspirations into reality.<br><br>
 
-            Whether you're seeking thrilling adventures, serene getaways, or cultural explorations, AmarPoth is here to guide you every step of the way. Our platform offers a seamless experience for discovering, planning, and booking the perfect trip tailored to your preferences.
+            Whether you're seeking thrilling adventures, serene getaways, or cultural explorations, AmarPoth is here to guide you every step of the way. Our platform offers a seamless experience for discovering, planning, and booking the perfect trip tailored to your preferences. From breathtaking landscapes and hidden gems to unique local experiences, AmarPoth connects you with a wide range of destinations that cater to every interest and budget.<br><br>
 
-            What We Offer:
+            With user-friendly tools, personalized recommendations, and detailed itineraries, we make the process effortless. Whether you're an adrenaline junkie looking for outdoor escapades, a history enthusiast eager to immerse yourself in rich cultural heritage, or someone in search of tranquility and relaxation, we've got you covered. Trust AmarPoth to turn your travel dreams into reality, and embark on unforgettable journeys with ease and confidence.<br><br>
 
-            Curated Travel Packages: From sun-kissed beaches to majestic mountains, we bring you the best deals to suit your wanderlust.
-            Destination Highlights: Explore must-visit attractions, hidden gems, and cultural landmarks.
-            Simplified Booking: Easy-to-use interface for quick and hassle-free bookings.
-            At AmarPoth, we don't just book trips; we craft unforgettable experiences. Let us be your travel companion as you discover the world, one destination at a time.
+            <b>What We Offer:</b>
+            <ul>
+            <li><b>Curated Travel Packages:</b> From sun-kissed beaches to majestic mountains, we bring you the best deals to suit your wanderlust.</li>
+            <li><b>Destination Highlights:</b> Explore must-visit attractions, hidden gems, and cultural landmarks.</li>
+            <li><b>Simplified Booking:</b> Easy-to-use interface for quick and hassle-free bookings.</li>
+            </ul><br><p>
+            At AmarPoth, we don't just book trips; we craft unforgettable experiences. Let us be your travel companion as you discover the world, one destination at a time.<br><br>
+           
 
-            Start your journey with AmarPoth today.
-            Travel. Discover. Repeat.
+            Start your journey with AmarPoth today.<br>
         </p>
     </div>
 
@@ -213,22 +230,24 @@
         <div class="container">
             <h2>Login / Sign In to View More...</h2>
             
-            <button>
-            <span>Login / Sign In</span>
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 74 74"
-                height="34"
-                width="34"
-            >
-                <circle stroke-width="3" stroke="black" r="35.5" cy="37" cx="37"></circle>
-                <path
-                fill="black"
-                d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z"
-                ></path>
-            </svg>
+            <form action="/signup" method="get">
+            <button type="submit">
+                <span>Login / Sign In</span>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 74 74"
+                    height="34"
+                    width="34"
+                >
+                    <circle stroke-width="3" stroke="black" r="35.5" cy="37" cx="37"></circle>
+                    <path
+                        fill="black"
+                        d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z"
+                    ></path>
+                </svg>
             </button>
+        </form>
 
         </div>
     </section>

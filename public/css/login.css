@@ -1,0 +1,207 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.login-container {
+    background-color: #ffffff;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 380px;
+    padding: 30px;
+}
+
+.login-container h2 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #000;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 800;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.form-group input {
+    width: 94%;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: "Nunito", sans-serif;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #333;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    font-weight: 800;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-items: center;
+}
+
+.login-btn:hover {
+    background-color: #333;
+}
+
+.btn-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    width: 100%; 
+}
+
+.login-container p {
+    margin-top: 20px;body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f5f5f5;
+    }
+    
+    .login-container {
+        background-color: #ffffff;
+        border: 2px solid #000;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 380px; 
+        padding: 50px;
+        box-sizing: border-box; 
+    }
+    
+    .login-container h2 {
+        font-size: 24px;
+        font-weight: 800;
+        color: #000;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .form-group {
+        margin-bottom: 15px;
+    }
+    
+    .form-group label {
+        display: block;
+        font-weight: 800;
+        margin-bottom: 5px;
+        color: #000;
+    }
+    
+    .form-group input {
+        width: calc(100% - 20px);
+        padding: 10px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        font-size: 14px;
+        font-family: "Nunito", sans-serif;
+    }
+    
+    .form-group input:focus {
+        outline: none;
+        border-color: #333;
+    }
+    
+    .login-btn {
+        padding: 10px;
+        background-color: #000;
+        color: #fff;
+        font-weight: 800;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .login-btn:hover {
+        background-color: #333;
+    }
+    
+    .btn-wrapper {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .login-container p {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 14px;
+    }
+    
+    .login-container p a {
+        color: #000;
+        text-decoration: none;
+        font-weight: 800;
+        transition: color 0.3s ease;
+    }
+    
+    .login-container p a:hover {
+        color: #333;
+    }
+    
+    text-align: center;
+    font-size: 14px;
+}
+
+.login-container p a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 800;
+    transition: color 0.3s ease;
+}
+
+.login-container p a:hover {
+    color: #333;
+}
+
+/* Link Underline on hover  */
+a {
+    position: relative;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    text-shadow: #333 3px 3px 5px;
+    text-decoration: none;
+    margin: 0 10px;
+}a::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 48, 110);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}a:hover::before {
+    transform: scaleX(1);
+}
