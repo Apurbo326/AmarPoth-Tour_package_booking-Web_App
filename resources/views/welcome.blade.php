@@ -79,7 +79,7 @@
         <div class="container">
             <h1 class="logo">
             <img id="one" src="images/AmarPoth_-_Main_Logo-removebg-preview.png" alt="Main logo">
-                <a href="#">
+                <a href="/">
                     <img src="images/AmarPoth_-_Text_Logo-removebg-preview.png" alt="Text Logo">
                 </a>
             </h1>

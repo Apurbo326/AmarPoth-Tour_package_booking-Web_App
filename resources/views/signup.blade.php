@@ -74,6 +74,7 @@
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" placeholder="Enter your password" required>
             </div>
+
             <button type="submit" class="signup-btn">Sign Up</button>
         </form>
 
