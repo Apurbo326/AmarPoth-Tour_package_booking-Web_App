@@ -18,7 +18,7 @@
             </div>
             <nav>
                 <a href="/admin/dashboard/{{ $user->id }}">Dashboard</a>
-                <a href="/admin/packages">Add Package</a>
+                <a href="/admin/dashboard/{{ $user->id }}">Add Package</a>
                 <a href="/admin/hotels">Add Hotel</a>
                 <a href="/admin/coupons">Add Discount Coupon</a>
                 <a href="/admin/bookings">View Bookings</a>
@@ -40,24 +40,55 @@
 
             <!-- Example: Add Package Form -->
             <h2>Add New Package</h2>
-            <form action="/admin/packages/store" method="POST">
+            <form action="{{ route('admin.packages.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label for="package_name">Package Name</label>
-                    <input type="text" id="package_name" name="package_name" required>
+                    <input type="text" id="package_name" name="name" required>
                 </div>
                 <div class="form-group">
                     <label for="package_description">Package Description</label>
-                    <textarea id="package_description" name="package_description" required></textarea>
+                    <textarea id="package_description" name="description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="package_summary">Package Summary</label>
+                    <textarea id="package_summary" name="summary" required></textarea>
                 </div>
                 <div class="form-group">
                     <label for="package_price">Package Price</label>
-                    <input type="number" id="package_price" name="package_price" required>
+                    <input type="number" id="package_price" name="price" required>
                 </div>
+                <div class="form-group">
+                    <label for="starting_point">Starting Point</label>
+                    <input type="text" id="starting_point" name="starting_point" required>
+                </div>
+                <div class="form-group">
+                    <label for="ending_point">Ending Point</label>
+                    <input type="text" id="ending_point" name="ending_point" required>
+                </div>
+                <div class="form-group">
+                    <label for="package_days">Package Days</label>
+                    <input type="number" id="package_days" name="package_days" required>
+                </div>
+                <div class="form-group">
+                    <label for="package_catagory_id">Package Category</label>
+                    <select id="package_catagory_id" name="package_catagory_id" required>
+                        <option value="1">Adventure</option>
+                        <option value="2">Romantic</option>
+                        <option value="3">Luxury</option>
+                    </select>
+                </div>
+                
                 <div class="form-group">
                     <label for="package_image">Package Image</label>
                     <input type="file" id="package_image" name="package_image" required>
                 </div>
+                
+                <div class="form-group">
+                    <label for="image_caption">Image Caption</label>
+                    <input type="text" id="image_caption" name="image_caption" required>
+                </div>
+
                 <button type="submit" class="btn">Add Package</button>
             </form>
 

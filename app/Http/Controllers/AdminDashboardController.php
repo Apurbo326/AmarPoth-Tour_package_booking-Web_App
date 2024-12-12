@@ -7,6 +7,7 @@ use App\Models\User;
 
 class AdminDashboardController extends Controller
 {
+
     public function index($id)
     {
         // Fetch the admin by ID

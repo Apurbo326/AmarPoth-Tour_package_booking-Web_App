@@ -92,29 +92,6 @@
         </div>
     </header>
 
-    <div class="bio">
-        <h1>AmarPoth: Your Ultimate Travel Partner</h1>
-        <span style="margin: 10px;"> </span>
-        <p>
-            At <b>AmarPoth</b>, we believe that every journey tells a story and every destination holds a dream. We are a dedicated travel booking platform committed to turning your travel aspirations into reality.<br><br>
-
-            Whether you're seeking thrilling adventures, serene getaways, or cultural explorations, AmarPoth is here to guide you every step of the way. Our platform offers a seamless experience for discovering, planning, and booking the perfect trip tailored to your preferences. From breathtaking landscapes and hidden gems to unique local experiences, AmarPoth connects you with a wide range of destinations that cater to every interest and budget.<br><br>
-
-            With user-friendly tools, personalized recommendations, and detailed itineraries, we make the process effortless. Whether you're an adrenaline junkie looking for outdoor escapades, a history enthusiast eager to immerse yourself in rich cultural heritage, or someone in search of tranquility and relaxation, we've got you covered. Trust AmarPoth to turn your travel dreams into reality, and embark on unforgettable journeys with ease and confidence.<br><br>
-
-            <b>What We Offer:</b>
-            <ul>
-            <li><b>Curated Travel Packages:</b> From sun-kissed beaches to majestic mountains, we bring you the best deals to suit your wanderlust.</li>
-            <li><b>Destination Highlights:</b> Explore must-visit attractions, hidden gems, and cultural landmarks.</li>
-            <li><b>Simplified Booking:</b> Easy-to-use interface for quick and hassle-free bookings.</li>
-            </ul><br><p>
-            At AmarPoth, we don't just book trips; we craft unforgettable experiences. Let us be your travel companion as you discover the world, one destination at a time.<br><br>
-           
-
-            Start your journey with AmarPoth today.<br>
-        </p>
-    </div>
-
     <section class="hero">
         <div class="hero-content">
             <h2>Discover Your Next Adventure</h2>
@@ -154,7 +131,7 @@
         </div>
     </section>
 
-    <section id="" class="packages">
+    <section id="#" class="packages">
         <h2>Popular Packages</h2>
         <span style="margin: 5px;"> </span>
         <div class="package-cards">

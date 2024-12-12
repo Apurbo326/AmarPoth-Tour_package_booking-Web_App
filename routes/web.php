@@ -22,6 +22,14 @@ Route::get('/images/AmarPoth-Favicon.ico', function () {
     return response()->file(public_path('images/AmarPoth-Favicon.ico'));
 });
 
+Route::get('/packages', function () {
+    return view('packages');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
 Route::get('/signup', function () {
     return view('signup');
 });
@@ -55,6 +63,9 @@ Route::get('/user/dashboard/{id}', [UserDashboardController::class, 'index'])->n
 Route::get('/admin/dashboard/{id}', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
 
 
-
-
+use App\Http\Controllers\PackageController;
+Route::post('/admin/packages', [PackageController::class, 'store'])->name('admin.packages.store');
+Route::get('/admin/packages', function () {
+    return "Warning: Something went worng. The Data is not Stored yet and will be lost forever!";
+});
 
