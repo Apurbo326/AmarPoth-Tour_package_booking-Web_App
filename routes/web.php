@@ -69,3 +69,5 @@ Route::get('/admin/packages', function () {
     return "Warning: Something went worng. The Data is not Stored yet and will be lost forever!";
 });
 
+use App\Http\Controllers\PackageControllerView;
+Route::get('/packages', [PackageControllerView::class, 'showPackages'])->name('packages.index');

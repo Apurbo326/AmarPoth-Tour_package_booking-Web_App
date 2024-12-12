@@ -14,5 +14,10 @@ class PackageImage extends Model
     ];
 
     public $timestamps = false; 
+
+    public function package()
+    {
+        return $this->belongsTo(Package::class);
+    }
 }
 

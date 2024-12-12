@@ -71,6 +71,67 @@
             font-weight: 400;
             font-style: normal;
         }
+
+        /* General section styles */
+        #packages {
+            padding: 50px 0; /* Add padding for spacing */
+            text-align: center; /* Center text */
+        }
+
+        #packages h2 {
+            font-size: 2.5rem; /* Increase font size for the heading */
+            color: #333; /* Dark color for text */
+            margin-bottom: 30px; /* Space below the heading */
+        }
+
+        .package-cards {
+            display: flex;
+            flex-wrap: wrap; /* Wrap cards in case of small screen */
+            justify-content: center; /* Center align the cards */
+            gap: 20px; /* Space between the cards */
+        }
+
+        .package-card {
+            background-color: #fff; /* White background for each card */
+            border-radius: 8px; /* Rounded corners for the cards */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow around the cards */
+            width: 300px; /* Set a fixed width for the cards */
+            padding: 20px; /* Padding inside the cards */
+            text-align: left; /* Left align the text */
+            transition: transform 0.3s ease; /* Smooth transition on hover */
+        }
+
+        .package-card:hover {
+            transform: translateY(-5px); /* Lift the card slightly on hover */
+            box-shadow: 0px 0px 0px grey;
+            -webkit-transition:  box-shadow .6s ease-out;
+                box-shadow: .8px .9px 3px grey;
+        }
+
+        .package-card h3 {
+            font-size: 1.8rem; /* Font size for the package name */
+            margin-bottom: 15px; /* Space below the name */
+        }
+
+        .package-card p {
+            font-size: 1rem; /* Standard font size for text */
+            color: #555; /* Dark gray for the description text */
+            line-height: 1.6; /* Line spacing for readability */
+        }
+
+        .package-card img {
+            width: 100%; /* Make image fill the container */
+            height: 200px; /* Set a fixed height for images */
+            object-fit: cover; /* Ensure the image covers the area without distortion */
+            border-radius: 8px; /* Rounded corners for images */
+            margin-bottom: 10px; /* Space below the image */
+        }
+
+        .package-card .caption {
+            font-size: 0.9rem; /* Smaller font size for captions */
+            color: #888; /* Lighter color for captions */
+            text-align: center; /* Center align captions */
+        }
     </style>
 
 </head>
@@ -131,76 +192,25 @@
         </div>
     </section>
 
-    <section id="#" class="packages">
-        <h2>Popular Packages</h2>
-        <span style="margin: 5px;"> </span>
+    <section id="packages" class="packages">
+        <h2>Our Packages</h2>
+        <span style="margin: 5px;"></span>
         <div class="package-cards">
-            <div class="card">
-                <img src="https://skift.com/wp-content/uploads/2023/04/zany-jadraque-ZCRtfop2hZY-unsplash.jpg" alt="Beach Destination">
-                <h3>Tropical Paradise</h3>
-                <p>Starting at $499</p>
-
-                <div data-tooltip="Price:-$499" class="button">
-                <div class="button-wrapper">
-                <div class="text">Book Now</div>
-                    <span class="icon">
-                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
-                </svg>
-                    </span>
+            @foreach($packages as $package)
+                <div class="package-card">
+                    <h3>{{ $package->name }}</h3>
+                    <p>{{ $package->description }}</p>
+                    <!-- Iterate through package images -->
+                    @foreach($package->packageImages as $image)
+                        <img src="{{ asset('storage/' . $image->image) }}" alt="{{ $image->caption }}" style="width: 200px; height: auto;">
+                        <p>{{ $image->caption }}</p>
+                    @endforeach
                 </div>
-                </div>
-                
-            </div>
-            <div class="card">
-                <img src="https://wanderlustphotosblog.com/wp-content/uploads/2019/06/Grindelwald-1417.webp" alt="Mountain Destination">
-                <h3>Mountain Adventure</h3>
-                <p>Starting at $399</p>
-                <div data-tooltip="Price:-$399" class="button">
-                <div class="button-wrapper">
-                <div class="text">Book Now</div>
-                    <span class="icon">
-                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
-                </svg>
-                    </span>
-                </div>
-                </div>
-
-            </div>
-            <div class="card">
-                <img src="https://media.cnn.com/api/v1/images/stellar/prod/231211145923-02-euromonitor-top-city-destinations-2023-dubai.jpg?c=original" alt="City Destination">
-                <h3>City Escape</h3>
-                <p>Starting at $299</p>
-                <div data-tooltip="Price:-$299" class="button">
-                <div class="button-wrapper">
-                <div class="text">Book Now</div>
-                    <span class="icon">
-                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
-                </svg>
-                    </span>
-                </div>
-                </div>
-
-            </div>
-            <div class="card">
-                <img src="https://theplaidhorse.s3.amazonaws.com/media/uploads/2023/03/pexels-pixabay-158179.jpg" alt="Country Side Destination">
-                <h3>Country Adventure</h3>
-                <p>Starting at $199</p>
-                <div data-tooltip="Price:-$199" class="button">
-                <div class="button-wrapper">
-                <div class="text">Book Now</div>
-                    <span class="icon">
-                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
-                </svg>
-                    </span>
-                </div>
-                </div>
-
-            </div>
+            @endforeach
         </div>
+    </section>
+
+
     </section>
 
     <section class="login-section">
