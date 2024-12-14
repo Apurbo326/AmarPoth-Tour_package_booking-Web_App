@@ -199,10 +199,10 @@
             @foreach($packages as $package)
                 <div class="package-card">
                     <h3>{{ $package->name }}</h3>
-                    <p>{{ $package->description }}</p>
+                    <p>{{ $package->description }}</p><br>
                     <!-- Iterate through package images -->
                     @foreach($package->packageImages as $image)
-                        <img src="{{ asset('storage/' . $image->image) }}" alt="{{ $image->caption }}" style="width: 200px; height: auto;">
+                    <img src="{{ asset('storage/' . $image->image) }}" alt="{{ $image->caption }}" style="width: 200px; height: auto;">
                         <p>{{ $image->caption }}</p>
                     @endforeach
                 </div>
@@ -215,7 +215,7 @@
 
     <section class="login-section">
         <div class="container">
-            <h2>Login / Sign In to View More...</h2>
+            <h2>Login / Sign In to Purchase...</h2>
             
             <form action="/signup" method="get">
             <button type="submit">

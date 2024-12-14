@@ -19,7 +19,7 @@
             <nav>
                 <a href="/admin/dashboard/{{ $user->id }}">Dashboard</a>
                 <a href="/admin/dashboard/{{ $user->id }}">Add Package</a>
-                <a href="/admin/hotels">Add Hotel</a>
+                <a href="/admin/add_hotel/">Add Hotel</a>
                 <a href="/admin/coupons">Add Discount Coupon</a>
                 <a href="/admin/bookings">View Bookings</a>
                 <a href="/admin/clients">Client Bookings</a>

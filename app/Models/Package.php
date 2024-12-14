@@ -20,6 +20,7 @@ class Package extends Model
 
     public $timestamps = false;
 
+
     public function packageImages()
     {
         return $this->hasMany(PackageImage::class);

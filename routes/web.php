@@ -71,3 +71,18 @@ Route::get('/admin/packages', function () {
 
 use App\Http\Controllers\PackageControllerView;
 Route::get('/packages', [PackageControllerView::class, 'showPackages'])->name('packages.index');
+
+use App\Http\Controllers\HotelController;
+Route::get('/admin/add_hotel', function() {
+    return view('admin.add_hotel');
+});
+
+
+// Route to show the form (GET request)
+Route::get('/admin/hotels', [HotelController::class, 'create'])->name('admin.hotels.create');
+
+// Route to handle form submission (POST request)
+Route::post('/admin/hotels', [HotelController::class, 'store'])->name('admin.hotels.store');
+
+
+

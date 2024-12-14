@@ -7,7 +7,6 @@ use App\Models\User;
 
 class AdminDashboardController extends Controller
 {
-
     public function index($id)
     {
         // Fetch the admin by ID
@@ -17,7 +16,7 @@ class AdminDashboardController extends Controller
             abort(404, 'Admin not found.');
         }
 
-        // Pass the $user data to the view
+        // Pass the user to the view
         return view('admin.dashboard', compact('user'));
     }
 }
