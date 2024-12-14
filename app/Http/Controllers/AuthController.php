@@ -23,7 +23,7 @@ class AuthController extends Controller
                 return redirect()->route('admin.dashboard', ['id' => $user->id])
                                  ->with('success', 'Welcome to the admin dashboard!');
             } elseif ($user->user_role === 'user') {
-                return redirect()->route('user.dashboard', ['id' => $user->id])
+                return redirect()->route('user.dashboard', ['user' => $user])
                                  ->with('success', 'Welcome to your user dashboard!');
             }
         }

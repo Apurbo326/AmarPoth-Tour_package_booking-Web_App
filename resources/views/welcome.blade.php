@@ -154,7 +154,7 @@
         </div>
     </section>
 
-    <section id="" class="packages">
+    <section id="packages" class="packages">
         <h2>Popular Packages</h2>
         <span style="margin: 5px;"> </span>
         <div class="package-cards">

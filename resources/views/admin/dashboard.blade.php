@@ -20,9 +20,9 @@
                 <a href="/admin/dashboard/{{ $user->id }}">Dashboard</a>
                 <a href="/admin/dashboard/{{ $user->id }}">Add Package</a>
                 <a href="/admin/add_hotel/">Add Hotel</a>
-                <a href="/admin/coupons">Add Discount Coupon</a>
-                <a href="/admin/bookings">View Bookings</a>
-                <a href="/admin/clients">Client Bookings</a>
+                <a href="#">Add Discount Coupon</a>
+                <a href="#">View Bookings</a>
+                <a href="#">Client Bookings</a>
                 <a href="/">Logout</a>
             </nav>
             <footer>
@@ -38,8 +38,15 @@
             <!-- Admin Name Display -->
             <p><b>{{ $user->name }}</b>, welcome to AmarPoth!</p>
 
+            @if (session('success'))
+                <div class="alert alert-success" style="padding-bottom: 20px">
+                    {{ session('success') }}
+                </div>
+            @endif
+
             <!-- Example: Add Package Form -->
             <h2>Add New Package</h2>
+
             <form action="{{ route('admin.packages.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">

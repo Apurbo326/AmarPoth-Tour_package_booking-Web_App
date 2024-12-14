@@ -59,7 +59,7 @@ Route::get('/login', function () {
 })->name('login');
 
 Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
-Route::get('/user/dashboard/{id}', [UserDashboardController::class, 'index'])->name('user.dashboard');
+//Route::get('/user/dashboard/{id}', [UserDashboardController::class, 'index'])->name('user.dashboard');
 Route::get('/admin/dashboard/{id}', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
 
 
@@ -78,11 +78,13 @@ Route::get('/admin/add_hotel', function() {
 });
 
 
-// Route to show the form (GET request)
 Route::get('/admin/hotels', [HotelController::class, 'create'])->name('admin.hotels.create');
-
-// Route to handle form submission (POST request)
 Route::post('/admin/hotels', [HotelController::class, 'store'])->name('admin.hotels.store');
 
 
+
+Route::get('/user/dashboard/{userId}', [UserDashboardController::class, 'userDashboard']);
+Route::post('/user/packages/book/{packageId}', [UserDashboardController::class, 'bookPackage'])->name('user.book_package');
+
+Route::get('/user/dashboard/{user}', [UserDashboardController::class, 'dashboard'])->name('user.dashboard');
 

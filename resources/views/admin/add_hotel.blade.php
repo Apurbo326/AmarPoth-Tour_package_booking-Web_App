@@ -20,9 +20,9 @@
                 <a href="/admin/dashboard/31">Dashboard</a>
                 <a href="/admin/dashboard/31">Add Package</a>
                 <a href="/admin/hotels">Add Hotel</a>
-                <a href="/admin/coupons">Add Discount Coupon</a>
-                <a href="/admin/bookings">View Bookings</a>
-                <a href="/admin/clients">Client Bookings</a>
+                <a href="#">Add Discount Coupon</a>
+                <a href="#">View Bookings</a>
+                <a href="#">Client Bookings</a>
                 <a href="/">Logout</a>
             </nav>
             <footer>

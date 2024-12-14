@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Package;
+use App\Models\PackageBooking;
+use App\Models\Hotel; 
+use Illuminate\Http\Request;
 
 class UserDashboardController extends Controller
 {
@@ -16,5 +19,24 @@ class UserDashboardController extends Controller
         }
 
         return view('user.dashboard', compact('user'));
+    }
+
+    public function userDashboard($userId)
+    {
+        $user = User::findOrFail($userId);
+        $packages = Package::all();
+        $purchasedPackages = PackageBooking::where('user_id', $userId)
+            ->with('package') // Eager load package details
+            ->get();
+
+        // Fetch all hotels from the database
+        $hotels = Hotel::all();  // Assuming you have a Hotel model
+
+        return view('user.dashboard', [
+            'user' => $user,
+            'packages' => $packages,
+            'purchased_packages' => $purchasedPackages,
+            'hotels' => $hotels,  // Pass the hotels data to the view
+        ]);
     }
 }

@@ -19,5 +19,10 @@ class PackageImage extends Model
     {
         return $this->belongsTo(Package::class);
     }
+    public function packageImages()
+    {
+        return $this->hasMany(PackageImage::class);
+    }
+
 }
 

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Package extends Model
 {
@@ -26,5 +27,10 @@ class Package extends Model
         return $this->hasMany(PackageImage::class);
     }
 
+    use HasFactory;
 
+    public function bookings()
+    {
+        return $this->hasMany(PackageBooking::class, 'package_id');
+    }
 }

@@ -48,6 +48,6 @@ class PackageController extends Controller
             ]);
         }
 
-        return redirect()->back()->with('success', 'Package and image added successfully.');
+        return redirect()->back()->with('success', 'Package and image added successfully!');
     }
 }

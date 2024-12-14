@@ -186,7 +186,7 @@
                 ></path>
                 </svg>
             </span>
-            Explore Our Popular Packages
+            Explore Our All Packages
             </a>
 
         </div>
