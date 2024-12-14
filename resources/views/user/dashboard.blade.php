@@ -92,6 +92,8 @@
                         <th>Package</th>
                         <th>Journey Date</th>
                         <th>Payment Amount</th>
+                        <th>Transaction ID</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -99,11 +101,14 @@
                     <tr>
                         <td>{{ $purchase->package->name }}</td>
                         <td>{{ $purchase->journey_date }}</td>
-                        <td>${{ $purchase->payment_amount }}</td>
+                        <td>{{ $purchase->payment_amount }} BDT</td>
+                        <td>{{ $purchase->transaction_id }}</td>
+                        <td>{{ $purchase->status->name }}</td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
+
         </div>
     </div>
 </body>

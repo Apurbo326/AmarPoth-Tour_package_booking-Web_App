@@ -32,4 +32,9 @@ class PackageBooking extends Model
     {
         return $this->belongsTo(Package::class, 'package_id');
     }
+
+    public function status()
+    {
+        return $this->belongsTo(Status::class, 'status_id', 'id');
+    }
 }

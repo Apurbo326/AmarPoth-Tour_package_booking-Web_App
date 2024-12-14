@@ -26,7 +26,7 @@ class UserDashboardController extends Controller
         $user = User::findOrFail($userId);
         $packages = Package::all();
         $purchasedPackages = PackageBooking::where('user_id', $userId)
-            ->with('package') // Eager load package details
+            ->with(['package', 'status']) 
             ->get();
 
         // Fetch all hotels from the database
