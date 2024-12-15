@@ -18,10 +18,9 @@
             </div>
             <nav>
                 <a href="/admin/dashboard/{{ $user->id }}">Dashboard</a>
-                <a href="/admin/dashboard/{{ $user->id }}">Add Package</a>
+                <a href="#add_packages">Add Package</a>
                 <a href="/admin/add_hotel/">Add Hotel</a>
-                <a href="#">View Bookings</a>
-                <a href="#">Client Bookings</a>
+                <a href="#viewbooking">View Bookings</a>
                 <a href="/">Logout</a>
             </nav>
             <footer>
@@ -34,9 +33,6 @@
             <!-- Dashboard Heading -->
             <h1>Admin Dashboard</h1>
 
-            <!-- Admin Name Display -->
-            <p><b>{{ $user->name }}</b>, welcome to AmarPoth!</p>
-
             @if (session('success'))
                 <div class="alert alert-success" style="padding-bottom: 20px">
                     {{ session('success') }}
@@ -44,7 +40,7 @@
             @endif
 
             <!-- Example: Add Package Form -->
-            <h2>Add New Package</h2>
+            <h2 id="add_packages">Add New Package</h2>
 
             <form action="{{ route('admin.packages.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
@@ -99,7 +95,7 @@
             </form>
 
             <!-- Example: View Bookings Table -->
-            <h2>Bookings List</h2>
+            <h2 id="viewbooking">Bookings List</h2>
             <table>
                 <thead>
                     <tr>
@@ -107,39 +103,38 @@
                         <th>Client</th>
                         <th>Booking Date</th>
                         <th>Status</th>
+                        <th>Journey Date</th>
+                        <th>Bkash Account Number</th>
+                        <th>Transaction ID</th>
+                        <th>Update Status</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($bookings as $booking)
                     <tr>
-                        <td>Luxury Bali</td>
-                        <td>John Doe</td>
-                        <td>2024-12-15</td>
-                        <td>Confirmed</td>
+                        <td>{{ $booking->package_name }}</td>
+                        <td>{{ $booking->client_name }}</td>
+                        <td>{{ \Carbon\Carbon::parse($booking->created_date)->format('Y-m-d') }}</td>
+                        <td>{{ $booking->booking_status }}</td>
+                        <td>{{ \Carbon\Carbon::parse($booking->journey_date)->format('Y-m-d') }}</td>
+                        <td>{{ $booking->bkash_account_number }}</td>
+                        <td>{{ $booking->transaction_id }}</td>
+                        <td>
+                            <form action="{{ route('admin.updateStatus', ['bookingId' => $booking->id, 'userId' => $user->id]) }}" method="POST">
+                                @csrf
+                                <select name="status_id" required>
+                                    @foreach ($statuses as $status)
+                                        <option value="{{ $status->id }}" 
+                                            @if ($status->id == $booking->status_id) selected @endif>
+                                            {{ $status->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                <button type="submit" class="btn-update">Update</button>
+                            </form>
+                        </td>
                     </tr>
-                    <tr>
-                        <td>Romantic Paris</td>
-                        <td>Jane Smith</td>
-                        <td>2024-12-20</td>
-                        <td>Pending</td>
-                    </tr>
-                    <tr>
-                        <td>Adventure Iceland</td>
-                        <td>Emily Johnson</td>
-                        <td>2024-12-18</td>
-                        <td>Pending</td>
-                    </tr>
-                    <tr>
-                        <td>Relaxing Maldives</td>
-                        <td>Michael Brown</td>
-                        <td>2024-12-22</td>
-                        <td>Cancelled</td>
-                    </tr>
-                    <tr>
-                        <td>Romantic Paris</td>
-                        <td>Amy Wilson</td>
-                        <td>2024-12-25</td>
-                        <td>Confirmed</td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

@@ -110,3 +110,7 @@ Route::post('/package-booking', 'App\Http\Controllers\PackageBookingController@s
 
 use App\Http\Controllers\PackageBookingController;
 Route::post('/package/booking/store', [PackageBookingController::class, 'storeBooking'])->name('package.booking.store');
+
+
+Route::post('/admin/booking/{bookingId}/update-status/{userId}', [AdminDashboardController::class, 'updateStatus'])->name('admin.updateStatus');
+Route::get('/admin/dashboard/{id}', [AdminDashboardController::class, 'index'])->name('admin.dashboard');

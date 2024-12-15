@@ -73,6 +73,8 @@
                         <p><strong>End Point:</strong> <span id="modalEndPoint"></span></p>
                     </div>
 
+                    <p style="text-align: center; padding-top:30px;">To book this package, please "Send Money" the shown amount to <br>this Bkash Account : 01629325002</p>
+
                     <form action="{{ route('package.booking.store') }}" method="POST">
                         @csrf
                         <input type="hidden" name="package_id" id="package_id" value="">
@@ -90,7 +92,7 @@
                         </div>
                         
                         <div>
-                            <label for="bkash_account_number">bKash Account Number:</label>
+                            <label for="bkash_account_number">Your BKash Account Number:</label>
                             <input type="text" name="bkash_account_number" id="bkash_account_number" required>
                         </div>
                         

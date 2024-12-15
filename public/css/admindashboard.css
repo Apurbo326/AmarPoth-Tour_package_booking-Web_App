@@ -11,6 +11,7 @@ body {
 /* Sidebar */
 .sidebar {
     width: 250px;
+    min-height: 100vh;
     background-color: #000000;
     color: #fff;
     padding: 20px;
@@ -113,4 +114,29 @@ th {
 
 img {
     filter: invert(1);
+}
+
+/* Class for the submit button */
+.btn-update {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #000000; /* Green background */
+    color: white; /* White text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Padding for the button */
+    font-size: 16px; /* Text size */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition on hover */
+    width: 100%;
+}
+
+.btn-update:hover {
+    background-color: #252525; /* Darker green on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.btn-update:active {
+    background-color: #000000; /* Even darker green when clicked */
+    transform: translateY(0); /* Reset lift effect */
 }
