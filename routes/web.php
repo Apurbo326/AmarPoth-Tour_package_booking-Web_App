@@ -88,3 +88,25 @@ Route::post('/user/packages/book/{packageId}', [UserDashboardController::class, 
 
 Route::get('/user/dashboard/{user}', [UserDashboardController::class, 'dashboard'])->name('user.dashboard');
 
+use App\Models\Package; // Ensure this is included at the top of the file
+
+Route::get('/packages/{id}', function ($id) {
+    $package = Package::with('packageImages')->findOrFail($id);
+
+    return response()->json([
+        'id' => $package->id,
+        'name' => $package->name,
+        'description' => $package->description,
+        'price' => $package->price,
+        'startPoint' => $package->starting_point,
+        'endPoint' => $package->ending_point,
+        'image' => $package->packageImages->first()->image ?? null
+    ]);
+});
+
+
+
+Route::post('/package-booking', 'App\Http\Controllers\PackageBookingController@store')->name('package.booking.store');
+
+use App\Http\Controllers\PackageBookingController;
+Route::post('/package/booking/store', [PackageBookingController::class, 'storeBooking'])->name('package.booking.store');

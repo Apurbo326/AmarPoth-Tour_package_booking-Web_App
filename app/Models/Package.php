@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Package extends Model
 {
-    protected $table = "package";
+    protected $table = 'package';
     protected $fillable = [
         'name', 
         'description', 
@@ -32,5 +32,10 @@ class Package extends Model
     public function bookings()
     {
         return $this->hasMany(PackageBooking::class, 'package_id');
+    }
+
+    public function package()
+    {
+        return $this->belongsTo(Package::class, 'package_id');
     }
 }

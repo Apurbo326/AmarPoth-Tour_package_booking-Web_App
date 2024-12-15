@@ -11,6 +11,7 @@ class PackageBooking extends Model
 
     protected $table = 'package_booking';
 
+
     protected $fillable = [
         'package_id',
         'user_id',
@@ -18,8 +19,7 @@ class PackageBooking extends Model
         'journey_date',
         'bkash_account_number',
         'transaction_id',
-        'payment_date',
-        'created_by',
+        'status_id',
         'created_date',
     ];
 
