@@ -102,10 +102,10 @@
                         <th>Package</th>
                         <th>Client</th>
                         <th>Booking Date</th>
-                        <th>Status</th>
                         <th>Journey Date</th>
                         <th>Bkash Account Number</th>
                         <th>Transaction ID</th>
+                        <th>Status</th>
                         <th>Update Status</th>
                     </tr>
                 </thead>
@@ -115,10 +115,10 @@
                         <td>{{ $booking->package_name }}</td>
                         <td>{{ $booking->client_name }}</td>
                         <td>{{ \Carbon\Carbon::parse($booking->created_date)->format('Y-m-d') }}</td>
-                        <td>{{ $booking->booking_status }}</td>
                         <td>{{ \Carbon\Carbon::parse($booking->journey_date)->format('Y-m-d') }}</td>
                         <td>{{ $booking->bkash_account_number }}</td>
                         <td>{{ $booking->transaction_id }}</td>
+                        <td>{{ $booking->booking_status }}</td>
                         <td>
                             <form action="{{ route('admin.updateStatus', ['bookingId' => $booking->id, 'userId' => $user->id]) }}" method="POST">
                                 @csrf
