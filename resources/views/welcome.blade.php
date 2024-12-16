@@ -37,6 +37,13 @@
             font-style: normal;
         }
 
+        strong {
+            font-family: "Nunito", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 800;
+            font-style: normal;
+        }
+
         h3 {
             font-family: "Nunito", sans-serif;
             font-optical-sizing: auto;
@@ -70,6 +77,38 @@
             font-optical-sizing: auto;
             font-weight: 400;
             font-style: normal;
+        }
+
+        .card-container-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .card-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center; /* Optional: Align cards horizontally within the container */
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            width: 23%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .card-body {
+            margin-top: 10px;
         }
     </style>
 
@@ -148,81 +187,30 @@
                 ></path>
                 </svg>
             </span>
-            Explore Our Popular Packages
+            Explore Our Latest Packages
             </a>
-
         </div>
     </section>
 
     <section id="packages" class="packages">
-        <h2>Popular Packages</h2>
+        <h2>Our Latest Packages</h2>
         <span style="margin: 5px;"> </span>
-        <div class="package-cards">
-            <div class="card">
-                <img src="https://skift.com/wp-content/uploads/2023/04/zany-jadraque-ZCRtfop2hZY-unsplash.jpg" alt="Beach Destination">
-                <h3>Tropical Paradise</h3>
-                <p>Starting at $499</p>
-
-                <div data-tooltip="Price:-$499" class="button">
-                <div class="button-wrapper">
-                <div class="text">Book Now</div>
-                    <span class="icon">
-                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
-                </svg>
-                    </span>
+        <div class="card-container">
+            @foreach($packages as $package)
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{ asset('storage/' . $package->images->first()->image ?? 'default.jpg') }}" 
+                            alt="{{ $package->images->first()->caption ?? 'No image available' }}">
+                    </div>
+                    <div class="card-body">
+                        <h3>{{ $package->name }}</h3>
+                        <p>{{ $package->summary }}</p>
+                        <p><strong>Price:</strong> ${{ $package->price }}</p>
+                        <p><strong>Duration:</strong> {{ $package->package_days }} days</p>
+                        <p><strong>From:</strong> {{ $package->starting_point }} <span style="padding-right: 10px;"></span> <strong>To:</strong> {{ $package->ending_point }}</p>
+                    </div>
                 </div>
-                </div>
-                
-            </div>
-            <div class="card">
-                <img src="https://wanderlustphotosblog.com/wp-content/uploads/2019/06/Grindelwald-1417.webp" alt="Mountain Destination">
-                <h3>Mountain Adventure</h3>
-                <p>Starting at $399</p>
-                <div data-tooltip="Price:-$399" class="button">
-                <div class="button-wrapper">
-                <div class="text">Book Now</div>
-                    <span class="icon">
-                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
-                </svg>
-                    </span>
-                </div>
-                </div>
-
-            </div>
-            <div class="card">
-                <img src="https://media.cnn.com/api/v1/images/stellar/prod/231211145923-02-euromonitor-top-city-destinations-2023-dubai.jpg?c=original" alt="City Destination">
-                <h3>City Escape</h3>
-                <p>Starting at $299</p>
-                <div data-tooltip="Price:-$299" class="button">
-                <div class="button-wrapper">
-                <div class="text">Book Now</div>
-                    <span class="icon">
-                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
-                </svg>
-                    </span>
-                </div>
-                </div>
-
-            </div>
-            <div class="card">
-                <img src="https://theplaidhorse.s3.amazonaws.com/media/uploads/2023/03/pexels-pixabay-158179.jpg" alt="Country Side Destination">
-                <h3>Country Adventure</h3>
-                <p>Starting at $199</p>
-                <div data-tooltip="Price:-$199" class="button">
-                <div class="button-wrapper">
-                <div class="text">Book Now</div>
-                    <span class="icon">
-                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
-                </svg>
-                    </span>
-                </div>
-                </div>
-
-            </div>
+            @endforeach
         </div>
     </section>
 

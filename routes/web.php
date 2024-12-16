@@ -114,3 +114,6 @@ Route::post('/package/booking/store', [PackageBookingController::class, 'storeBo
 
 Route::post('/admin/booking/{bookingId}/update-status/{userId}', [AdminDashboardController::class, 'updateStatus'])->name('admin.updateStatus');
 Route::get('/admin/dashboard/{id}', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
+
+use App\Http\Controllers\WelcomePageController;
+Route::get('/', [WelcomePageController::class, 'index'])->name('welcome');
