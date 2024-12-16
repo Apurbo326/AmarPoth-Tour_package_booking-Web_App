@@ -205,7 +205,7 @@
                     <div class="card-body">
                         <h3>{{ $package->name }}</h3>
                         <p>{{ $package->summary }}</p>
-                        <p><strong>Price:</strong> ${{ $package->price }}</p>
+                        <p><strong>Price:</strong> {{ $package->price }} BDT</p>
                         <p><strong>Duration:</strong> {{ $package->package_days }} days</p>
                         <p><strong>From:</strong> {{ $package->starting_point }} <span style="padding-right: 10px;"></span> <strong>To:</strong> {{ $package->ending_point }}</p>
                     </div>

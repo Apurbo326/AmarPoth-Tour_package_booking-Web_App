@@ -49,6 +49,7 @@
                     @endforeach
                     <h3>{{ $package->name }}</h3>
                     <p>{{ $package->summary }}</p>
+                    <p><strong>Duration:</strong> {{ $package->package_days }} days</p>
                     <p><strong>Price:</strong> {{ $package->price }} BDT</p>
                     <button class="btn" onclick="showPackageDetails({{ $package->id }})">Book Now</button>
                 </div>
