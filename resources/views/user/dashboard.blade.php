@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ asset('css/userdashboard.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body style="background-color: black;">
     <div class="dashboard-container">
         <!-- Sidebar -->
         <div class="sidebar">
